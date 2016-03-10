@@ -1,7 +1,7 @@
 import java.util.*;
 public class Player{
-   List<Card> myHand;
-   Deck personalDeck;
+   private List<Card> myHand;
+   private Deck personalDeck;
 
    public Player(Deck my20){
       myHand = new ArrayList<Card>();

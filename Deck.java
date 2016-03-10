@@ -1,7 +1,7 @@
 import java.util.*;
 public class Deck{
+   private List<Card> myDeck;
 
-   public List<Card> myDeck;
    public Deck(){
       myDeck = new ArrayList<Card>();
    }
@@ -14,6 +14,10 @@ public class Deck{
             myDeck.add(new Card(rank[x],suit[i]));
          }
       }
+   }
+
+   public void add(Card input){
+      myDeck.add(input);
    }
 
    public void shuffle(){
