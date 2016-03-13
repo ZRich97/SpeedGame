@@ -1,24 +1,24 @@
 public class Game{
    private boolean won;
-   private Player p1;
-   private Player p2;
+   private Player me;
+   private Player other;
    private Deck mainDeck;
    private Card[] active;   
-   private Deck p1SideDeck;
-   private Deck p2SideDeck;
+   private Deck meSideDeck;
+   private Deck otherSideDeck;
 
    public Game(Player pl1, Player pl2, Deck main){
-      p1 = pl1;
-      p2 = pl2;
+      me = pl1;
+      other = pl2;
       mainDeck = main;
       active = new Card[2];
       active[0]=mainDeck.draw();
       active[1]=mainDeck.draw();
-      p1SideDeck = new Deck();
-      p2SideDeck = new Deck();
+      meSideDeck = new Deck();
+      otherSideDeck = new Deck();
       for(int i = 0; i < 6; i++){
-         p1SideDeck.add(mainDeck.draw());
-         p2SideDeck.add(mainDeck.draw());
+         meSideDeck.add(mainDeck.draw());
+         otherSideDeck.add(mainDeck.draw());
       }
       System.out.println(mainDeck.size());
    }
@@ -27,6 +27,22 @@ public class Game{
       // Draws from both side decks when no present options 
       active[0]=mainDeck.draw();
       active[1]=mainDeck.draw();
+   }
+
+   public int gameOver(){
+      // Returns 0 if game not over
+      // Returns 1 if I win
+      // Returns 2 if other wins
+      if(meSideDeck.size()!=0&&otherSideDeck.size()!=0){
+         return 0;
+      }
+      else if(meSideDeck.size()==0){
+         return 1;
+      }
+      else if(otherSideDeck.size()==0){
+         return 1;
+      }
+      return 0;
    }
 
 }

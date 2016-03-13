@@ -19,5 +19,9 @@ public class Driver{
       Player player1 = new Player(p1Side);
       Player player2 = new Player(p2Side);
       Game myGame = new Game(player1, player2, m);
+
+      while(myGame.gameOver()==0){
+         //// GUI FUNCTIONALITY 
+      }
    }
 }
