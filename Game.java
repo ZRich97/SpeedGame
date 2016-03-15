@@ -7,6 +7,12 @@ public class Game{
    private Deck meSideDeck;
    private Deck otherSideDeck;
 
+   /**
+   Constructor for Game class.
+   @param pl1 The current player.
+   @param pl2 The current player's opponent.
+   @param main The main Deck of Cards.
+   */
    public Game(Player pl1, Player pl2, Deck main){
       me = pl1;
       other = pl2;
@@ -23,16 +29,19 @@ public class Game{
       System.out.println(mainDeck.size());
    }
 
+   /**
+   Draws from both side decks when no present options.
+   */
    public void resetCenter(){
-      // Draws from both side decks when no present options 
       active[0]=mainDeck.draw();
       active[1]=mainDeck.draw();
    }
 
+   /**
+   Determines if the game is over.
+   @return 0 if game not over, 1 if pl1 wins, 2 if pl2 wins.
+   */
    public int gameOver(){
-      // Returns 0 if game not over
-      // Returns 1 if I win
-      // Returns 2 if other wins
       if(meSideDeck.size()!=0&&otherSideDeck.size()!=0){
          return 0;
       }
