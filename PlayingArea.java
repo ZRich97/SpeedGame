@@ -52,19 +52,20 @@ import java.applet.*;
          if(e.getY() > player.getHand().get(0).getY() + this.getY()&& e.getY() < player.getHand().get(0).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(0), current.getActive()[0]);
             current.setActive(temp, 0);
-            if(current.getJunk() != null){
+            if (temp == current.getActive()[0]){
                temp = player.playCard(player.getHand().get(0), current.getActive()[1]);
                current.setActive(temp, 1);
             }
+            
          }
       }
       if(e.getX()> player.getHand().get(1).getX() + X_OFFSET + 10*1 && e.getX()< player.getHand().get(1).getX() + X_OFFSET + 10*1 + 90){
          if(e.getY() > player.getHand().get(1).getY() + this.getY()&& e.getY() < player.getHand().get(1).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(1), current.getActive()[0]);
             current.setActive(temp, 0);
-            if(current.getJunk() != null){
-               temp = player.playCard(player.getHand().get(1), current.getActive()[1]);
-               current.setActive(temp, 1);
+            if (temp == current.getActive()[0]){
+            temp = player.playCard(player.getHand().get(1), current.getActive()[1]);
+            current.setActive(temp, 1);
             }
          }
       }
@@ -72,7 +73,7 @@ import java.applet.*;
          if(e.getY() > player.getHand().get(2).getY() + this.getY()&& e.getY() < player.getHand().get(2).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(2), current.getActive()[0]);
             current.setActive(temp, 0);
-            if(current.getJunk() != null){
+            if (temp == current.getActive()[0]){
                temp = player.playCard(player.getHand().get(2), current.getActive()[1]);
                current.setActive(temp, 1);
             }
@@ -83,7 +84,7 @@ import java.applet.*;
             Card temp = player.playCard(player.getHand().get(3), current.getActive()[0]);
             current.setActive(temp, 0);
             System.out.println("Done");
-            if(current.getJunk() != null){
+            if (temp == current.getActive()[0]){
                temp = player.playCard(player.getHand().get(3), current.getActive()[1]);
                current.setActive(temp, 1);
             }
@@ -93,7 +94,7 @@ import java.applet.*;
          if(e.getY() > player.getHand().get(4).getY() + this.getY()&& e.getY() < player.getHand().get(4).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(4), current.getActive()[0]);
             current.setActive(temp, 0);
-            if(current.getJunk() == null){
+            if (temp == current.getActive()[0]){
                temp = player.playCard(player.getHand().get(4), current.getActive()[1]);
                current.setActive(temp, 1);
             }

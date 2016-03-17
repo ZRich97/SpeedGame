@@ -19,7 +19,7 @@ public class Deck{
    public void add52(Image[][] images){
       
       String[] suit = { "Spades", "Diamonds", "Clubs", "Hearts" };
-      int[] rank = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
+      int[] rank = { 14,2,3,4,5,6,7,8,9,10,11,12,13 };
       for(int i = 0; i < suit.length; i++){
          for(int x = 0; x < rank.length; x++){
             myDeck.add(new Card(rank[x],suit[i], images[i][x]));

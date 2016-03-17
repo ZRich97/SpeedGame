@@ -39,8 +39,10 @@ public class Player{
             Card c = personalDeck.draw();
             myHand.add(c);
             c.setX(chosen.getX());
+            return chosen;
          }
       }
-      return chosen;
+      return center;
+      
    }
 }

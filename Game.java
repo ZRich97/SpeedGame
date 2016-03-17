@@ -22,7 +22,10 @@ public class Game{
       mainDeck = main;
       active = new Card[2];
       active[0]=mainDeck.draw();
+      System.out.println("BUILT"+active[0].toString());
       active[1]=mainDeck.draw();
+      System.out.println("BUILT"+active[1].toString());
+    
       meSideDeck = new Deck();
       junk = new Deck();
       otherSideDeck = new Deck();
@@ -46,11 +49,18 @@ public class Game{
       return active;
    }
    public Card setActive(Card newC, int x){
-      junk.add(active[x]);
+      //junk.add(active[x]);
       Card temp = active[x];
+      System.out.println(newC.toString());
+      //System.out.println(active[0].toString());
+      //System.out.println(active[1].toString());
+      //System.out.println(x);
+      System.out.println(active[x].toString());
       active[x] = newC;
+      System.out.println(active[x].toString());
+      
       return temp;
-   }
+   } 
    
    /**
    Draws from both side decks when no present options.

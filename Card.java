@@ -73,6 +73,9 @@ public class Card{
       return suit;
    }
 
+   public String toString(){
+      return "Suit="+suit+" Val=" + value;
+   }
    /**
    Compares this Card to another Card, and decides whether or not 
    it is a valid placement by Speed rules.
