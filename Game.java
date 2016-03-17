@@ -3,7 +3,7 @@ package SpeedGame;
 public class Game{
    private boolean won;
    private Player me;
-   private Player other;
+   private AI other;
    private Deck mainDeck;
    private Card[] active;   
    private Deck meSideDeck;
@@ -16,7 +16,7 @@ public class Game{
    @param pl2 The current player's opponent.
    @param main The main Deck of Cards.
    */
-   public Game(Player pl1, Player pl2, Deck main){
+   public Game(Player pl1, AI pl2, Deck main){
       me = pl1;
       other = pl2;
       mainDeck = main;
@@ -50,6 +50,12 @@ public class Game{
       return false;
    }
 
+   public Player getPlayer(){
+      return me;
+   }
+   public AI getComputer(){
+      return other;
+   }
    public Deck getJunk(){
       return junk;
    }

@@ -1,3 +1,4 @@
+package SpeedGame;
 
 import java.awt.Image;
 

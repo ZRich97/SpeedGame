@@ -17,10 +17,11 @@ import javax.swing.JPanel;
 
 public class Driver extends Applet implements MouseListener{
    private JPanel playArea;
-   private PlayingArea player1Area, player2Area;
+   private PlayingArea player1Area;
+   private PlayingArea player2Area;
    private NeutralPlayingArea mid;
    private Player player1;
-   private Player player2;
+   private AI computer;
    public static final int X_POSITION_1 = 430;
    public static final int X_POSITION_2 = 530;
    public static final int X_POSITION_3 = 630;
@@ -164,11 +165,11 @@ public class Driver extends Applet implements MouseListener{
 
       // Initializing two players and main deck
       player1 = new Player(p1Side);
-      player2 = new Player(p2Side);
-      Game myGame = new Game(player1, player2, m);
+      computer = new AI(p2Side);
+      Game myGame = new Game(player1, computer, m);
 
       player1Area = new PlayingArea(player1, myGame);
-      player2Area = new PlayingArea(player2, myGame);
+      player2Area = new PlayingArea(computer, myGame);
       mid = new NeutralPlayingArea(myGame);
       playArea = new JPanel();
       mid.setLocation(mid.getX(), player1Area.getHeight());
