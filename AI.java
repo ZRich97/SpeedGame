@@ -4,7 +4,7 @@ import java.util.*;
 public class AI extends Player{
    private List<Card> myHand;
    private Deck personalDeck;
-   
+
    /**
    Constructor for AI class.
    @param my20 The AI's Deck of 20 Cards.
@@ -25,11 +25,10 @@ public class AI extends Player{
    @param chosen The Card that is played.
    @param center The Card that is currently in the field.
    */
-   public Card playCard(Card[] center){
+   public Card playCard(Card center){
       Card chosen = myHand.get(0);
       for(int i = 0; i < 4; i++){
-         for(int x = 0; x < 2; x ++){
-            if(chosen.isValidPlacement(center[x])){
+            if(chosen.isValidPlacement(center)){
                myHand.remove(chosen);
                if(personalDeck.size()!=0){
                   Card c = personalDeck.draw();
@@ -40,6 +39,6 @@ public class AI extends Player{
             }
          }
          return center;
-      }  
+      
    }
 }
