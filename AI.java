@@ -2,12 +2,14 @@ package SpeedGame;
 
 import java.util.*;
 public class AI extends Player{
-
+   private List<Card> myHand;
+   private Deck personalDeck;
+   
    /**
    Constructor for AI class.
    @param my20 The AI's Deck of 20 Cards.
    */
-   public Player(Deck my20){
+   public AI(Deck my20){
       super(my20);
    }
 
