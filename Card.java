@@ -84,7 +84,7 @@ public class Card{
    */
    public boolean isValidPlacement(Card other){
       if(other==null){
-         return true;
+         return false;
       }
       if((this.value==(other.value-1))||(this.value==(other.value+1))){
          return true;

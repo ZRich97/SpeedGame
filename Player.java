@@ -20,6 +20,13 @@ public class Player{
       }
    }
 
+   public void draw(){
+      if(personalDeck.size()!=0){
+         Card c = personalDeck.draw();
+         myHand.add(c);
+         //c.setX(chosen.getX());
+      }
+   }
    public Deck getDeck(){
       return personalDeck;
    }
@@ -35,12 +42,9 @@ public class Player{
    public Card playCard(Card chosen, Card center){
       if(chosen.isValidPlacement(center)){
          myHand.remove(chosen);
-         if(personalDeck.size()!=0){
-            Card c = personalDeck.draw();
-            myHand.add(c);
-            c.setX(chosen.getX() - 30);
+         
             return chosen;
-         }
+         
       }
       return center;
       

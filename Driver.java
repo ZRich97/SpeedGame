@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class Driver extends Applet implements MouseListener{
    private JPanel playArea;
    private PlayingArea player1Area;
-   private PlayingArea player2Area;
+   private PlayingAreaAI player2Area;
    private NeutralPlayingArea mid;
    private Player player1;
    private AI computer;
@@ -169,7 +169,7 @@ public class Driver extends Applet implements MouseListener{
       Game myGame = new Game(player1, computer, m);
 
       player1Area = new PlayingArea(player1, myGame);
-      player2Area = new PlayingArea(computer, myGame);
+      player2Area = new PlayingAreaAI(computer, myGame, this.getGraphics());
       mid = new NeutralPlayingArea(myGame);
       playArea = new JPanel();
       mid.setLocation(mid.getX(), player1Area.getHeight());
@@ -211,16 +211,18 @@ public class Driver extends Applet implements MouseListener{
 
    public void mousePressed(MouseEvent e) {
       player1Area.mousePressed(e);
-      player2Area.mousePressed(e);
+      //player2Area.mousePressed(e);
       this.paint(this.getGraphics());
       mid.paint(this.getGraphics());
       
       
       
+      
    }
 
-   public void mouseReleased(MouseEvent arg0) {
-      
+   public void mouseReleased(MouseEvent e) {
+      //player1Area.mouseReleased(e);
+      //player2Area.mouseReleased(e);
       
    } 
 

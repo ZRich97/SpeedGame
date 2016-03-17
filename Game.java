@@ -38,10 +38,10 @@ public class Game{
 
    public boolean ifOptions(){
       for(int i = 0; i < 4; i++){
-         if(me.getHand().get(i).isValidPlacement(active[0])||me.getHand().get(i).isValidPlacement(active[1])){
+         if(me.getHand().get(i).isValidPlacement(active[0]) || me.getHand().get(i).isValidPlacement(active[1])){
             return true;
          }
-         if(other.getHand().get(i).isValidPlacement(active[0])||other.getHand().get(i).isValidPlacement(active[1])){
+         if(other.getHand().get(i).isValidPlacement(active[0]) || other.getHand().get(i).isValidPlacement(active[1])){
             return true;
          }
       }
