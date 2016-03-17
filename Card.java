@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.awt.Image;
 
@@ -80,7 +79,7 @@ public class Card{
    Compares this Card to another Card, and decides whether or not 
    it is a valid placement by Speed rules.
    @param other The Card that this Card will be placed onto.
-   @return su Whether or not the placement is valid.
+   @return Whether or not the placement is valid.
    */
    public boolean isValidPlacement(Card other){
       if(other==null){
@@ -88,6 +87,11 @@ public class Card{
       }
       if((this.value==(other.value-1))||(this.value==(other.value+1))){
          return true;
+      }
+      if(this.value==2){
+          if(other.value==14){
+              return true;
+           } 
       }
       if(this.value==14){
          if((1==(other.value-1))||(14==(other.value+1))){
