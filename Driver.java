@@ -192,10 +192,10 @@ public class Driver extends Applet implements MouseListener{
 
    
    public void mouseClicked(MouseEvent e) {
-      player1Area.mouseClicked(e);
-      player2Area.mouseClicked(e);
-      this.paint(this.getGraphics());
-      mid.paint(this.getGraphics());
+      //player1Area.mousePressed(e);
+      //player2Area.mousePressed(e);
+      //this.paint(this.getGraphics());
+      //mid.paint(this.getGraphics());
    }
 
    public void mouseEntered(MouseEvent arg0) {
@@ -208,13 +208,18 @@ public class Driver extends Applet implements MouseListener{
       
    }
 
-   public void mousePressed(MouseEvent arg0) {
-      // TODO Auto-generated method stub
+   public void mousePressed(MouseEvent e) {
+      player1Area.mousePressed(e);
+      player2Area.mousePressed(e);
+      this.paint(this.getGraphics());
+      mid.paint(this.getGraphics());
+      
+      
       
    }
 
    public void mouseReleased(MouseEvent arg0) {
-      // TODO Auto-generated method stub
+      
       
    } 
 

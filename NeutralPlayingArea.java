@@ -41,6 +41,10 @@ public class NeutralPlayingArea extends Canvas{
             g.drawImage(current.getActive()[1].getCardImage(), 520, this.getY(), this);
          }
          
+         if (current.getActive()[0] == null && current.getActive()[1] == null){
+            g.drawImage(back, 420, this.getY(), this);
+            g.drawImage(back, 520, this.getY(), this); 
+         }
          
          
       }catch (Exception e) { }
