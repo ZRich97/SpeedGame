@@ -46,6 +46,7 @@ public class Game{
          }
       }
       resetCenter();
+      System.out.println("DRAW FROM SIDE DECK");
       return false;
    }
 
@@ -85,6 +86,7 @@ public class Game{
       active[1]= otherSideDeck.draw();
 
    }
+   
 
    /**
    Determines if the game is over.
