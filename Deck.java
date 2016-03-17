@@ -1,7 +1,11 @@
+package SpeedGame;
+
+import java.awt.Image;
 import java.util.*;
+
 public class Deck{
    private List<Card> myDeck;
-
+   
    /**
    Constructor for Deck class.
    */
@@ -12,14 +16,19 @@ public class Deck{
    /**
    Adds the base 52 Cards to the Deck.
    */
-   public void add52(){
-      String[] suit = { "Clubs", "Diamonds", "Hearts", "Spades" };
+   public void add52(Image[][] images){
+      
+      String[] suit = { "Spades", "Diamonds", "Clubs", "Hearts" };
       int[] rank = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
       for(int i = 0; i < suit.length; i++){
          for(int x = 0; x < rank.length; x++){
-            myDeck.add(new Card(rank[x],suit[i]));
+            myDeck.add(new Card(rank[x],suit[i], images[i][x]));
          }
       }
+   }
+   
+   public boolean isEmpty(){
+      return (myDeck.isEmpty());
    }
 
    /**

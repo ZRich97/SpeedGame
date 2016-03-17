@@ -1,3 +1,5 @@
+package SpeedGame;
+
 import java.util.*;
 public class Player{
    private List<Card> myHand;
@@ -11,21 +13,34 @@ public class Player{
       myHand = new ArrayList<Card>();
       personalDeck = my20;
       for(int i = 0; i < 5; i++){
-         myHand.add(personalDeck.draw());
+         Card c = personalDeck.draw();
+         myHand.add(c);
+         c.setX(c.getX() + i*90);
+         
       }
    }
 
+   public Deck getDeck(){
+      return personalDeck;
+   }
+   
+   public List<Card> getHand(){
+      return myHand;
+   }
    /**
    Is called when the Player attempts to play a card.
    @param chosen The Card that is played.
    @param center The Card that is currently in the field.
    */
-   public void playCard(Card chosen, Card center){
+   public Card playCard(Card chosen, Card center){
       if(chosen.isValidPlacement(center)){
          myHand.remove(chosen);
          if(personalDeck.size()!=0){
-            myHand.add(personalDeck.draw());
+            Card c = personalDeck.draw();
+            myHand.add(c);
+            c.setX(chosen.getX());
          }
       }
+      return chosen;
    }
 }

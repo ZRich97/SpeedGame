@@ -1,3 +1,5 @@
+package SpeedGame;
+
 public class Game{
    private boolean won;
    private Player me;
@@ -6,6 +8,7 @@ public class Game{
    private Card[] active;   
    private Deck meSideDeck;
    private Deck otherSideDeck;
+   private Deck junk;
 
    /**
    Constructor for Game class.
@@ -21,20 +24,40 @@ public class Game{
       active[0]=mainDeck.draw();
       active[1]=mainDeck.draw();
       meSideDeck = new Deck();
+      junk = new Deck();
       otherSideDeck = new Deck();
-      for(int i = 0; i < 6; i++){
+      for(int i = 0; i < 5; i++){
          meSideDeck.add(mainDeck.draw());
          otherSideDeck.add(mainDeck.draw());
       }
       System.out.println(mainDeck.size());
    }
 
+   public Deck getJunk(){
+      return junk;
+   }
+   public Deck getMeSideDeck(){
+      return meSideDeck;
+   }
+   public Deck getOtherSideDeck(){
+      return otherSideDeck;
+   }
+   public Card[] getActive(){
+      return active;
+   }
+   public Card setActive(Card newC, int x){
+      junk.add(active[x]);
+      Card temp = active[x];
+      active[x] = newC;
+      return temp;
+   }
+   
    /**
    Draws from both side decks when no present options.
    */
    public void resetCenter(){
-      active[0]=mainDeck.draw();
-      active[1]=mainDeck.draw();
+      active[0]= meSideDeck.draw();
+      active[1]= otherSideDeck.draw();
    }
 
    /**
@@ -42,14 +65,14 @@ public class Game{
    @return 0 if game not over, 1 if pl1 wins, 2 if pl2 wins.
    */
    public int gameOver(){
-      if(meSideDeck.size()!=0&&otherSideDeck.size()!=0){
+      if(me.getDeck().size()!=0&&other.getDeck().size()!=0){
          return 0;
       }
-      else if(meSideDeck.size()==0){
+      else if(me.getDeck().size()==0){
          return 1;
       }
-      else if(otherSideDeck.size()==0){
-         return 1;
+      else if(other.getDeck().size()==0){
+         return 2;
       }
       return 0;
    }
