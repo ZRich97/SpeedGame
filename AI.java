@@ -16,7 +16,7 @@ public class AI extends Player{
    public Deck getDeck(){
       return super.getDeck();
    }
-   
+
    public List<Card> getHand(){
       return super.getHand();
    }

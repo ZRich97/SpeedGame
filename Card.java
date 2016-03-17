@@ -83,6 +83,9 @@ public class Card{
    @return su Whether or not the placement is valid.
    */
    public boolean isValidPlacement(Card other){
+      if(other==null){
+         return true;
+      }
       if((this.value==(other.value-1))||(this.value==(other.value+1))){
          return true;
       }
