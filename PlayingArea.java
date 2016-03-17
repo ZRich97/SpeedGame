@@ -36,7 +36,7 @@ import java.applet.*;
          try {
             for (int i=0 ; i < player.getHand().size() ; i++){
                
-                  playg.drawImage(player.getHand().get(i).getCardImage(), X_OFFSET + player.getHand().get(i).getX() + 10*i, player.getHand().get(i).getY() + this.getY(), this);
+                  playg.drawImage(player.getHand().get(i).getCardImage(),(Driver.X_POSITION_1 + 100*i), player.getHand().get(i).getY() + this.getY(), this);
                   
                   playg.drawImage(back, 100, player.getHand().get(i).getY()+ this.getY(), this);
             }   
@@ -48,7 +48,7 @@ import java.applet.*;
    
    public void mouseClicked(MouseEvent e) {
        
-      if(e.getX()> player.getHand().get(0).getX() + X_OFFSET + 10*0 && e.getX()< player.getHand().get(0).getX() + X_OFFSET + 10*0 + 90){
+      if(e.getX()> (Driver.X_POSITION_1 + 100*0) && e.getX()< (Driver.X_POSITION_1 + 100*0)+ 90){
          if(e.getY() > player.getHand().get(0).getY() + this.getY()&& e.getY() < player.getHand().get(0).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(0), current.getActive()[0]);
             current.setActive(temp, 0);
@@ -59,7 +59,7 @@ import java.applet.*;
             
          }
       }
-      if(e.getX()> player.getHand().get(1).getX() + X_OFFSET + 10*1 && e.getX()< player.getHand().get(1).getX() + X_OFFSET + 10*1 + 90){
+      if(e.getX()> (Driver.X_POSITION_1 + 100*1) && e.getX()< (Driver.X_POSITION_1 + 100*1)+ 90){
          if(e.getY() > player.getHand().get(1).getY() + this.getY()&& e.getY() < player.getHand().get(1).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(1), current.getActive()[0]);
             current.setActive(temp, 0);
@@ -69,7 +69,7 @@ import java.applet.*;
             }
          }
       }
-      if(e.getX()> player.getHand().get(2).getX() + X_OFFSET + 10*2 && e.getX()< player.getHand().get(2).getX() + X_OFFSET + 10*2 + 90){
+      if(e.getX()> (Driver.X_POSITION_1 + 100*2) && e.getX()< (Driver.X_POSITION_1 + 100*2)+ 90){
          if(e.getY() > player.getHand().get(2).getY() + this.getY()&& e.getY() < player.getHand().get(2).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(2), current.getActive()[0]);
             current.setActive(temp, 0);
@@ -79,7 +79,7 @@ import java.applet.*;
             }
          }
       }
-      if(e.getX()> player.getHand().get(3).getX() + X_OFFSET + 10*3 && e.getX()< player.getHand().get(3).getX() + X_OFFSET + 10*3 + 90){
+      if(e.getX()> (Driver.X_POSITION_1 + 100*3) && e.getX()< (Driver.X_POSITION_1 + 100*3)+ 90){
          if(e.getY() > player.getHand().get(3).getY() + this.getY()&& e.getY() < player.getHand().get(3).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(3), current.getActive()[0]);
             current.setActive(temp, 0);
@@ -90,7 +90,7 @@ import java.applet.*;
             }
          }
       }
-      if(e.getX()> player.getHand().get(4).getX() + X_OFFSET + 10*4 && e.getX()< player.getHand().get(4).getX() + X_OFFSET + 10*4 + 90){
+      if(e.getX()> (Driver.X_POSITION_1 + 100*4) && e.getX()< (Driver.X_POSITION_1 + 100*4)+ 90){
          if(e.getY() > player.getHand().get(4).getY() + this.getY()&& e.getY() < player.getHand().get(4).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(4), current.getActive()[0]);
             current.setActive(temp, 0);

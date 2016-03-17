@@ -38,7 +38,7 @@ public class Player{
          if(personalDeck.size()!=0){
             Card c = personalDeck.draw();
             myHand.add(c);
-            c.setX(chosen.getX());
+            c.setX(chosen.getX() - 30);
             return chosen;
          }
       }

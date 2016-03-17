@@ -21,11 +21,13 @@ public class Driver extends Applet implements MouseListener{
    private NeutralPlayingArea mid;
    private Player player1;
    private Player player2;
-   public static final int X_POSITION_1 = 460;
-   public static final int X_POSITION_2 = 460;
-   public static final int X_POSITION_3 = 460;
-   public static final int X_POSITION_4 = 460;
-   public static final int X_POSITION_5 = 460;
+   public static final int X_POSITION_1 = 430;
+   public static final int X_POSITION_2 = 530;
+   public static final int X_POSITION_3 = 630;
+   public static final int X_POSITION_4 = 730;
+   public static final int X_POSITION_5 = 830;
+   public static final int X_POSITION_MID1 = 420;
+   public static final int X_POSIITON_MID2 = 520;
    
    
    
