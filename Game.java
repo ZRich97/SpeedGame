@@ -36,6 +36,19 @@ public class Game{
       System.out.println(mainDeck.size());
    }
 
+   public boolean ifOptions(){
+      for(int i = 0; i < 4; i++){
+         if(me.getHand().get(i).isValidPlacement(active[0])||me.getHand().get(i).isValidPlacement(active[1])){
+            return true;
+         }
+         if(other.getHand().get(i).isValidPlacement(active[0])||other.getHand().get(i).isValidPlacement(active[1])){
+            return true;
+         }
+      }
+      resetCenter();
+      return false;
+   }
+
    public Deck getJunk(){
       return junk;
    }
@@ -66,8 +79,11 @@ public class Game{
    Draws from both side decks when no present options.
    */
    public void resetCenter(){
+      junk.add(active[0]);
+      junk.add(active[1]);
       active[0]= meSideDeck.draw();
       active[1]= otherSideDeck.draw();
+
    }
 
    /**
