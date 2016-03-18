@@ -15,6 +15,7 @@ public class Deck{
 
    /**
    Adds the base 52 Cards to the Deck.
+   @param images The 2d array of Images.
    */
    public void add52(Image[][] images){
       

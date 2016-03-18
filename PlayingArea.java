@@ -28,7 +28,10 @@ public class PlayingArea extends Canvas implements MouseListener{
          back = ImageIO.read(new File("CardImages/Poker072-113-Xr.jpg"));
       }catch (Exception e) { e.printStackTrace();}
    }
-   
+      /**
+   Updates the graphics.
+   @param playg Current graphics.
+   */
    public void paint (Graphics playg) {
      
       playg.setColor(new Color(0,185,0));
@@ -48,7 +51,10 @@ public class PlayingArea extends Canvas implements MouseListener{
       }
    }
    
-   
+      /**
+   Checks if mouse is clicked (for testing).
+   @param e the MouseEvent that occurred.
+   */
    public void mouseClicked(MouseEvent e) {
 
       if(e.getX()> (Driver.X_POSITION_1 + 100*0) && e.getX()< (Driver.X_POSITION_1 + 100*0)+ 90){
@@ -92,7 +98,6 @@ public class PlayingArea extends Canvas implements MouseListener{
          if(e.getY() > player.getHand().get(3).getY() + this.getY()&& e.getY() < player.getHand().get(3).getY() + this.getY()+ 90){
             Card temp = player.playCard(player.getHand().get(3), current.getActive()[0]);
             current.setActive(temp, 0);
-            System.out.println("Done");
             if (temp == current.getActive()[0]){
                temp = player.playCard(player.getHand().get(3), current.getActive()[1]);
                current.setActive(temp, 1);
@@ -115,17 +120,26 @@ public class PlayingArea extends Canvas implements MouseListener{
       }
       current.ifOptions();
    }
-
-   public void mouseEntered(MouseEvent arg0) {
+   /**
+   Checks if mouse is entered (for testing).
+   @param e the MouseEvent that occurred.
+   */
+   public void mouseEntered(MouseEvent e) {
       // TODO Auto-generated method stub
       
    }
-
-   public void mouseExited(MouseEvent arg0) {
+   /**
+   Checks if mouse is exited (for testing).
+   @param e the MouseEvent that occurred.
+   */
+   public void mouseExited(MouseEvent e) {
       // TODO Auto-generated method stub
       
    }
-
+   /**
+   Checks if mouse is pressed.
+   @param e the MouseEvent that occurred.
+   */
    public void mousePressed(MouseEvent e) {
       
       try{
@@ -175,7 +189,6 @@ public class PlayingArea extends Canvas implements MouseListener{
                Card chosen = player.getHand().get(3);
                Card temp = player.playCard(player.getHand().get(3), current.getActive()[0]);
                current.setActive(temp, 0);
-               System.out.println("Done");
                if (chosen != current.getActive()[0]){
                   temp = player.playCard(player.getHand().get(3), current.getActive()[1]);
                   current.setActive(temp, 1);
@@ -214,11 +227,13 @@ public class PlayingArea extends Canvas implements MouseListener{
             
          
       }
-      System.out.println("Click Registered :P");
    }
+   /**
+   Checks if mouse is released (for testing).
+   @param e the MouseEvent that occurred.
+   */
 
-   public void mouseReleased(MouseEvent arg0) {
-      System.out.println("Click Registered :P");
+   public void mouseReleased(MouseEvent e) {
       
    }
    

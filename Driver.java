@@ -32,7 +32,9 @@ public class Driver extends Applet implements MouseListener{
    public static final int X_POSIITON_MID2 = 520;
    
    
-   
+   /**
+   Runs the applet (acts as main).
+   */
    public void init(){
       //Draw Cards
       Image[][] images = new Image[4][13];
@@ -183,6 +185,10 @@ public class Driver extends Applet implements MouseListener{
       
    }
    
+   /**
+   Updates the graphics.
+   @param g Current graphics.
+   */
    public void paint(Graphics g){
       super.paint(g);
       
@@ -191,35 +197,47 @@ public class Driver extends Applet implements MouseListener{
       mid.paint(g);
    }
 
-   
+   /**
+   Checks if mouse is clicked (for testing).
+   @param e the MouseEvent that occurred.
+   */
    public void mouseClicked(MouseEvent e) {
       //player1Area.mousePressed(e);
       //player2Area.mousePressed(e);
       //this.paint(this.getGraphics());
       //mid.paint(this.getGraphics());
    }
-
-   public void mouseEntered(MouseEvent arg0) {
+   /**
+   Checks if mouse is entered (for testing).
+   @param e the MouseEvent that occurred.
+   */
+   public void mouseEntered(MouseEvent e) {
       // TODO Auto-generated method stub
       
    }
-
-   public void mouseExited(MouseEvent arg0) {
+   /**
+   Checks if mouse is exited (for testing).
+   @param e the MouseEvent that occurred.
+   */
+   public void mouseExited(MouseEvent e) {
       // TODO Auto-generated method stub
       
    }
-
+   /**
+   Checks if mouse is pressed.
+   @param e the MouseEvent that occurred.
+   */
    public void mousePressed(MouseEvent e) {
       player1Area.mousePressed(e);
       //player2Area.mousePressed(e);
       this.paint(this.getGraphics());
       mid.paint(this.getGraphics());
-      
-      
-      
-      
+ 
    }
-
+   /**
+   Checks if mouse is released (for testing).
+   @param e the MouseEvent that occurred.
+   */
    public void mouseReleased(MouseEvent e) {
       //player1Area.mouseReleased(e);
       //player2Area.mouseReleased(e);

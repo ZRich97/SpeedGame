@@ -16,7 +16,14 @@ public class PlayingAreaAI extends Canvas{
    Timer timer;
    Graphics g;
    private final int X_OFFSET = 400;
-   
+      /**
+   Constructor for AI's playingarea.
+   @param computer the AI.
+      @param game the current game state.
+   @param g the current graphics.
+
+   */
+
    public PlayingAreaAI(AI computer, Game game, Graphics g){
       this.computer = computer;
       this.current = game;
@@ -40,6 +47,10 @@ public class PlayingAreaAI extends Canvas{
          back = ImageIO.read(new File("CardImages/Poker072-113-Xr.jpg"));
       }catch (Exception e) { e.printStackTrace();}
    }
+      /**
+   Updates the graphics.
+   @param playg Current graphics.
+   */
    public void paint (Graphics playg) {
       
       playg.setColor(new Color(0,185,0));
@@ -58,7 +69,12 @@ public class PlayingAreaAI extends Canvas{
          
       }
    }
-   public void actionPerformed(ActionEvent arg0) {
+   /**
+   Checks if action is performed (for testing).
+   @param e the ActionEvent that occurred.
+   */
+
+   public void actionPerformed(ActionEvent e) {
       // TODO Auto-generated method stub
       
    }

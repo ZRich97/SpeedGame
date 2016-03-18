@@ -28,6 +28,7 @@ public class AI extends Player{
    /**
    Is called when the AI attempts to play a card.
    @param center The Card that is currently in the field.
+   @return the Card that results.
    */
    public Card playCard(Card center){
       

@@ -47,6 +47,7 @@ public class Player{
    Is called when the Player attempts to play a card.
    @param chosen The Card that is played.
    @param center The Card that is currently in the field.
+   @return the Card that results
    */
    public Card playCard(Card chosen, Card center){
       if(chosen.isValidPlacement(center)){

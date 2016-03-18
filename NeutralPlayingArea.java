@@ -14,6 +14,10 @@ public class NeutralPlayingArea extends Canvas{
    int width, height = 0;
    Image back;
    
+   /**
+   Constructor.
+   @param curr Current Game data.
+   */
    public NeutralPlayingArea(Game curr){
       current = curr;
       setSize(1000, 200);
@@ -23,6 +27,10 @@ public class NeutralPlayingArea extends Canvas{
       }catch (Exception e) { e.printStackTrace();}
 
    }
+      /**
+   Updates the graphics.
+   @param g Current graphics.
+   */
    public void paint(Graphics g){
       g.setColor(new Color(0,185,0));
       g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
