@@ -1,0 +1,95 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid2\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+{\info
+{\author Zachary D. Richardson}}\margl1440\margr1440\vieww10800\viewh14500\viewkind0
+\deftab720
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 To: Professor Augustine\
+From: Zachary Richardson and Varun Iyengar\
+Date: 3/17/16\
+Subject: Speed.java Documentation\
+\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 Purpose\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b0 \cf0 Our Program 7 is a java program that emulates the popular card game \'93Speed\'94. The user interacts with the program through a GUI designed to replicate what a typical game would look like. The difference is that, instead of sitting across from a human, the player is challenging an AI.\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 Inheritance Structure\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 {{\NeXTGraphic Screen Shot 2016-03-18 at 2.06.55 AM.png \width8240 \height4100
+}¬}
+\f0\b \
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 Data Structures\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\b0 \cf0 {\listtext	\'95	}Player\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}Uses a List of Card objects to represent the hand, allowing easy remove and add.\
+{\listtext	\'95	}Uses a Deck to hold Card objects in the side Deck (Deck is used to greatly simplify Card handling throughout the program).\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}Deck\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}Uses a List of Card objects to allow easy initialization of original 52 while also being able to easily be shuffled and drawn from (with remove).\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}Card\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}No complex data structures, just holding the essential values of a Card.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}Game\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}Uses an array of two Cards to represent the two center Card objects. We chose array over ArrayList as it will not be changing in size.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}AI\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}Same as Player\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}PlayingArea, PlayingAreaAI, and NeutralPlayingArea\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}No complex data structures. Used for graphics/display updating.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\'95	}Driver	\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\pardirnatural\partightenfactor0
+\ls1\ilvl1\cf0 {\listtext	\'95	}Uses a two-dimensional array to initialize all the Card .jpg files. \
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 Control Flow\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b0 \cf0 The program is primarily controlled through the Driver, which initializes the initial main Deck, distributes Card objects to Player and AI, and creates the current Game with the data. PlayingAreaAI and PlayingArea allow for the AI and the Player to take action through clicks for the player and a timer for the AI. Game holds the current Player\'92s data and the AI\'92s data, as well as the center Deck. Player and AI each hold their side Decks, and Decks in turn handle the Car objects they hold.  \
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 I/O\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b0 \cf0 Input is done through user clicks on the mouse, which the Driver detects. Driver then allows PlayingArea to decide if the click occurred on a Card that can be played, and if possible, that Card is then played. Output is done through the GUI, as the program will update using paint when actions occur that change the display (such as a center reset or card play).\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 UI\
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b0 \cf0 The UI is relatively straightforward, with the user\'92s cards displayed in a row at the top and the AI\'92s cards displayed on the opposite side at the bottom. The center deck is in the middle of the two. \
+\pard\pardeftab720\pardirnatural\partightenfactor0
+
+\b \cf0 Craftiness\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\b0 \cf0 {\listtext	\'95	}Instead of writing a method to shuffle Decks, we were able to use Collections.shuffle to take care of it easily. \
+{\listtext	\'95	}We initialize the .jpg files in a two-dimensional array, which makes it much more legible and easy to work with. \
+{\listtext	\'95	}The AI is \ul very\ulnone  difficult to beat, as it is nearly as efficient at the game as it could be. However, it operates off of a timer, so humans can beat it given the right handicap. \
+{\listtext	\'95	}I found that our CardDeckPlayerGame setup made the flow of the program much simpler than it could have been. The class structure followed common sense, making it very efficient.  \
+\pard\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+https://en.wikipedia.org/wiki/Speed_(card_game)\
+\
+\
+}
