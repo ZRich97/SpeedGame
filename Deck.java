@@ -26,7 +26,10 @@ public class Deck{
          }
       }
    }
-   
+   /**
+   Checks if this Deck is empty.
+   @return True if empty, False if full.
+   */
    public boolean isEmpty(){
       return (myDeck.isEmpty());
    }

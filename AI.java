@@ -11,17 +11,22 @@ public class AI extends Player{
    public AI(Deck my20){
       super(my20);
    }
-
+   /**
+   Access Deck.
+   @return The AI's Deck of 20 Cards.
+   */
    public Deck getDeck(){
       return super.getDeck();
    }
-
+   /**
+   Access Hand.
+   @return The AI's Hand.
+   */
    public List<Card> getHand(){
       return super.getHand();
    }
    /**
    Is called when the AI attempts to play a card.
-   @param chosen The Card that is played.
    @param center The Card that is currently in the field.
    */
    public Card playCard(Card center){

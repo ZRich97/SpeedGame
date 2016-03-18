@@ -3,7 +3,9 @@ package SpeedGame;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.applet.*;
@@ -31,37 +33,12 @@ public class PlayingAreaAI extends Canvas{
             System.out.println(current.getComputer().getHand().toString());
          }
       });
-      /*new java.util.Timer().schedule(
-            
-            new java.util.TimerTask(){
-               public void run(){
-                  current.getComputer().playCard(current.getActive()[0]);
-                  current.getComputer().playCard(current.getActive()[1]);
-                  System.out.println("AI is r=woring");
-                  
-                  runOnUiThread(new Runnable(){
-
-                     public void run() {
-                        // TODO Auto-generated method stub
-                        
-                     }
-                  
-                  })
-               }
-               
-            }, 5000
-            
-            );*/
-         
       
       setSize(1000, 200);
       timer.start();
       try {
-         back = (Toolkit.getDefaultToolkit()).getImage(new URL("http://gauss.ececs.uc.edu/Camp/Contributions/Cards/images/Poker072-113-Xr.jpg"));
-      } catch (MalformedURLException e) {
-         
-         e.printStackTrace();
-      }
+         back = ImageIO.read(new File("CardImages/Poker072-113-Xr.jpg"));
+      }catch (Exception e) { e.printStackTrace();}
    }
    public void paint (Graphics playg) {
       

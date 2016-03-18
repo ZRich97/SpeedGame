@@ -19,7 +19,9 @@ public class Player{
          
       }
    }
-
+   /**
+   Draws a Card if possible.
+   */
    public void draw(){
       if(personalDeck.size()!=0){
          Card c = personalDeck.draw();
@@ -27,10 +29,17 @@ public class Player{
          //c.setX(chosen.getX());
       }
    }
+   /**
+   Returns the Player's deck.
+   @return The Player's deck.
+   */
    public Deck getDeck(){
       return personalDeck;
    }
-   
+   /**
+   Returns the Player's hand.
+   @return The Player's hand.
+   */
    public List<Card> getHand(){
       return myHand;
    }

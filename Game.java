@@ -35,7 +35,10 @@ public class Game{
       }
       System.out.println(mainDeck.size());
    }
-
+   /**
+   Determines whether either Player has options.
+   @return True if options are left, False if not.
+   */
    public boolean ifOptions(){
       for(int i = 0; i < 4; i++){
          if(me.getHand().get(i).isValidPlacement(active[0]) || me.getHand().get(i).isValidPlacement(active[1])){
@@ -50,24 +53,54 @@ public class Game{
       return false;
    }
 
+   /**
+   Returns the Player.
+   @return the Player.
+   */
    public Player getPlayer(){
       return me;
    }
+   /**
+   Returns the AI.
+   @return the AI.
+   */
    public AI getComputer(){
       return other;
    }
+   /**
+   Returns the Junk pile.
+   @return the Junk pile.
+   */
    public Deck getJunk(){
       return junk;
    }
+   /**
+   Returns the Player's side Deck.
+   @return the Player's side Deck.
+   */
    public Deck getMeSideDeck(){
       return meSideDeck;
    }
+   /**
+   Returns the AI's side Deck.
+   @return the AI's side Deck.
+   */
    public Deck getOtherSideDeck(){
       return otherSideDeck;
    }
+   /**
+   Returns the active Cards.
+   @return the active Cards.
+   */
    public Card[] getActive(){
       return active;
    }
+   /**
+   Sets the indicated center Card to a new Card.
+   @return the old Card.
+   @param newC the new Card.   
+   @param x Center Card's index.   
+   */
    public Card setActive(Card newC, int x){
       //junk.add(active[x]);
       Card temp = active[x];

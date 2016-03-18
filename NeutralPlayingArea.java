@@ -3,9 +3,10 @@ package SpeedGame;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import java.applet.*;
 
 public class NeutralPlayingArea extends Canvas{
@@ -18,11 +19,9 @@ public class NeutralPlayingArea extends Canvas{
       setSize(1000, 200);
       setBackground(Color.GREEN);
       try {
-         back = (Toolkit.getDefaultToolkit()).getImage(new URL("http://gauss.ececs.uc.edu/Camp/Contributions/Cards/images/Poker072-113-Xr.jpg"));
-      } catch (MalformedURLException e) {
-         
-         e.printStackTrace();
-      }
+         back = ImageIO.read(new File("CardImages/Poker072-113-Xr.jpg"));
+      }catch (Exception e) { e.printStackTrace();}
+
    }
    public void paint(Graphics g){
       g.setColor(new Color(0,185,0));

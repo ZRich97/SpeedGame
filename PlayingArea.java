@@ -3,7 +3,9 @@ package SpeedGame;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.applet.*;
@@ -23,11 +25,8 @@ public class PlayingArea extends Canvas implements MouseListener{
       this.current = game;
       //this.result = new JLabel("End Message", )
       try {
-         back = (Toolkit.getDefaultToolkit()).getImage(new URL("http://gauss.ececs.uc.edu/Camp/Contributions/Cards/images/Poker072-113-Xr.jpg"));
-      } catch (MalformedURLException e) {
-         
-         e.printStackTrace();
-      }
+         back = ImageIO.read(new File("CardImages/Poker072-113-Xr.jpg"));
+      }catch (Exception e) { e.printStackTrace();}
    }
    
    public void paint (Graphics playg) {
