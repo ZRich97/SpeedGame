@@ -1,4 +1,3 @@
-package SpeedGame;
 
 public class Game{
    private boolean won;
@@ -22,9 +21,7 @@ public class Game{
       mainDeck = main;
       active = new Card[2];
       active[0]=mainDeck.draw();
-      System.out.println("BUILT"+active[0].toString());
       active[1]=mainDeck.draw();
-      System.out.println("BUILT"+active[1].toString());
     
       meSideDeck = new Deck();
       junk = new Deck();
@@ -33,26 +30,39 @@ public class Game{
          meSideDeck.add(mainDeck.draw());
          otherSideDeck.add(mainDeck.draw());
       }
-      System.out.println(mainDeck.size());
    }
    /**
    Determines whether either Player has options.
    @return True if options are left, False if not.
    */
    public boolean ifOptions(){
-      for(int i = 0; i < 4; i++){
-         if(me.getHand().get(i).isValidPlacement(active[0]) || 
-                     me.getHand().get(i).isValidPlacement(active[1])){
-            return true;
+      if(me.getHand().size()>=other.getHand().size()){
+         for(int i = 0; i < other.getHand().size(); i++){
+            if(me.getHand().get(i).isValidPlacement(active[0]) || 
+               me.getHand().get(i).isValidPlacement(active[1])){
+               return true;
          }
          if(other.getHand().get(i).isValidPlacement(active[0]) || 
-                     other.getHand().get(i).isValidPlacement(active[1])){
+            other.getHand().get(i).isValidPlacement(active[1])){
             return true;
          }
       }
-      resetCenter();
-      System.out.println("DRAW FROM SIDE DECK");
-      return false;
+      }
+      else if(me.getHand().size()<other.getHand().size()){
+         for(int i = 0; i < me.getHand().size(); i++){
+            if(me.getHand().get(i).isValidPlacement(active[0]) || 
+               me.getHand().get(i).isValidPlacement(active[1])){
+               return true;
+         }
+         if(other.getHand().get(i).isValidPlacement(active[0]) || 
+            other.getHand().get(i).isValidPlacement(active[1])){
+            return true;
+         }
+      }
+   }
+   resetCenter();
+   return false;
+   
    }
 
    /**
@@ -104,16 +114,8 @@ public class Game{
    @param x Center Card's index.   
    */
    public Card setActive(Card newC, int x){
-      //junk.add(active[x]);
       Card temp = active[x];
-      System.out.println(newC.toString());
-      //System.out.println(active[0].toString());
-      //System.out.println(active[1].toString());
-      //System.out.println(x);
-      System.out.println(active[x].toString());
-      active[x] = newC;
-      System.out.println(active[x].toString());
-      
+      active[x] = newC;      
       return temp;
    } 
    
@@ -134,13 +136,13 @@ public class Game{
    @return 0 if game not over, 1 if pl1 wins, 2 if pl2 wins.
    */
    public int gameOver(){
-      if(me.getDeck().size()!=0&&other.getDeck().size()!=0){
+      if(me.getHand().size()!=0&&other.getHand().size()!=0){
          return 0;
       }
-      else if(me.getDeck().size()==0){
+      else if(me.getHand().size()==0){
          return 1;
       }
-      else if(other.getDeck().size()==0){
+      else if(other.getHand().size()==0){
          return 2;
       }
       return 0;

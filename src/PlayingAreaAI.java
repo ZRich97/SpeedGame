@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.net.*;
 import java.awt.*;
@@ -36,8 +35,6 @@ public class PlayingAreaAI extends Canvas{
             Card temp2 = current.getComputer().playCard(current.getActive()[1]);
             current.setActive(temp1, 0);
             current.setActive(temp2, 1);
-            System.out.println("AI is r=woring");
-            System.out.println(current.getComputer().getHand().toString());
          }
       });
       

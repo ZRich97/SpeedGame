@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.awt.Image;
 import java.util.*;
@@ -55,7 +54,6 @@ public class Deck{
    @return The Card that was drawn, or null if no Cards are left.
    */
    public Card draw(){
-      System.out.println("Draw");
       if(myDeck.size()!=0){
          return myDeck.remove(size()-1);
       }

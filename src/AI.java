@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.util.*;
 public class AI extends Player{
@@ -31,7 +30,7 @@ public class AI extends Player{
    @return the Card that results.
    */
    public Card playCard(Card center){
-      
+      try{
       for(int i = 0; i < 5; i++){
             Card chosen = super.getHand().get(i);
             if(chosen.isValidPlacement(center)){
@@ -44,7 +43,9 @@ public class AI extends Player{
                }
             }
          }
-         return center;
+      }
+      catch(IndexOutOfBoundsException e){};
+      return center;
       
    }
 }

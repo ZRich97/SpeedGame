@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.util.*;
 public class Player{

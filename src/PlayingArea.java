@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.net.*;
 import java.awt.*;
@@ -18,6 +17,11 @@ public class PlayingArea extends Canvas implements MouseListener{
    //JLabel result;
    private final int X_OFFSET = 400;
    
+
+   public Game getGame(){
+      return current;
+   }
+
    public PlayingArea(Player player, Game game){
       this.player = player;
       setSize(1000, 200);
@@ -236,21 +240,26 @@ public class PlayingArea extends Canvas implements MouseListener{
          if (player.getHand().size() != 5){
             player.draw();
          }
-         if (current.gameOver() == 1){
-            System.out.println("You Win!");
-            System.exit(0);
-         }
-         else if(current.gameOver() == 2){
-            System.out.println("You Lose :(");
-            System.exit(0);
-         }
-         
+       
          current.ifOptions();
       }catch (IndexOutOfBoundsException ex){
-            
-         
+         current.ifOptions();         
       }
+
+      try{
+      if (current.gameOver() == 1){
+         System.out.println("You Win!");
+      }
+      else if (current.gameOver() == 2){
+         System.out.println("You Lose :(");
+      }
+      else if(current.getActive()[0]==null && current.getActive()[1]==null){
+         current.setActive(current.getPlayer().getHand().get(0), 0);
+         current.setActive(current.getComputer().getHand().get(0), 1);
+      }
+      }catch(Exception ex){};
    }
+
    /**
    Checks if mouse is released (for testing).
    @param e the MouseEvent that occurred.

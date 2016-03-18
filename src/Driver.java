@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.applet.Applet;
 import java.awt.Event;
@@ -65,7 +64,7 @@ public class Driver extends Applet implements MouseListener{
          images[0][11] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-212-Ks.jpg";
          images[0][12] = ImageIO.read(new File(myImg));
-   
+
          myImg = "CardImages/86px-Poker-sm-231-Ad.jpg";
          images[1][0] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-23D-2d.jpg";
@@ -92,7 +91,7 @@ public class Driver extends Applet implements MouseListener{
          images[1][11] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-232-Kd.jpg";
          images[1][12] = ImageIO.read(new File(myImg));
-   
+
          myImg = "CardImages/86px-Poker-sm-241-Ac.jpg";
          images[2][0] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-24D-2c.jpg";
@@ -119,7 +118,7 @@ public class Driver extends Applet implements MouseListener{
          images[2][11] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-242-Kc.jpg";
          images[2][12] = ImageIO.read(new File(myImg));
-   
+
          myImg = "CardImages/86px-Poker-sm-221-Ah.jpg";
          images[3][0] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-22D-2h.jpg";
@@ -146,7 +145,7 @@ public class Driver extends Applet implements MouseListener{
          images[3][11] = ImageIO.read(new File(myImg));
          myImg = "CardImages/86px-Poker-sm-222-Kh.jpg";
          images[3][12] = ImageIO.read(new File(myImg));
-   
+
          myImg = "CardImages/Poker072-113-Xr.jpg";
          Image back = ImageIO.read(new File(myImg));
       }catch (Exception e) { e.printStackTrace();}
@@ -176,13 +175,15 @@ public class Driver extends Applet implements MouseListener{
       playArea = new JPanel();
       mid.setLocation(mid.getX(), player1Area.getHeight());
       player2Area.setLocation(player2Area.getX(),
-                     player1Area.getHeight() + mid.getHeight());
+         player1Area.getHeight() + mid.getHeight());
       playArea.add(player1Area);
       playArea.add(player2Area);
       playArea.setLayout(new BoxLayout(playArea, BoxLayout.Y_AXIS));
       
-       
+
       addMouseListener(this);
+
+
       
    }
    
@@ -214,7 +215,7 @@ public class Driver extends Applet implements MouseListener{
    */
    public void mouseEntered(MouseEvent e) {
       // TODO Auto-generated method stub
-      
+
    }
    /**
    Checks if mouse is exited (for testing).
@@ -222,8 +223,13 @@ public class Driver extends Applet implements MouseListener{
    */
    public void mouseExited(MouseEvent e) {
       // TODO Auto-generated method stub
-      
+
    }
+
+   public void stop() {
+    System.out.println("stopping...");
+   }
+
    /**
    Checks if mouse is pressed.
    @param e the MouseEvent that occurred.
@@ -233,7 +239,15 @@ public class Driver extends Applet implements MouseListener{
       //player2Area.mousePressed(e);
       this.paint(this.getGraphics());
       mid.paint(this.getGraphics());
- 
+
+      try{
+      if (player1Area.getGame().gameOver() == 1){
+         System.out.println("You Win!");
+      }
+      else if (player1Area.getGame().gameOver() == 2){
+         System.out.println("You Lose :(");
+      }
+      }catch(Exception ex){};
    }
    /**
    Checks if mouse is released (for testing).
@@ -242,7 +256,7 @@ public class Driver extends Applet implements MouseListener{
    public void mouseReleased(MouseEvent e) {
       //player1Area.mouseReleased(e);
       //player2Area.mouseReleased(e);
-      
+
    } 
 
    

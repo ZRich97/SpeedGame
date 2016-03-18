@@ -1,4 +1,3 @@
-package SpeedGame;
 
 import java.net.*;
 import java.awt.*;
