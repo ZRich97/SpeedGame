@@ -175,7 +175,8 @@ public class Driver extends Applet implements MouseListener{
       mid = new NeutralPlayingArea(myGame);
       playArea = new JPanel();
       mid.setLocation(mid.getX(), player1Area.getHeight());
-      player2Area.setLocation(player2Area.getX(), player1Area.getHeight() + mid.getHeight());
+      player2Area.setLocation(player2Area.getX(),
+                     player1Area.getHeight() + mid.getHeight());
       playArea.add(player1Area);
       playArea.add(player2Area);
       playArea.setLayout(new BoxLayout(playArea, BoxLayout.Y_AXIS));

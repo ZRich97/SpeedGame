@@ -58,7 +58,9 @@ public class PlayingAreaAI extends Canvas{
       
          for (int i=0 ; i < computer.getHand().size() ; i++){
             
-            playg.drawImage(computer.getHand().get(i).getCardImage(), (Driver.X_POSITION_1 + 100*i), computer.getHand().get(i).getY() + this.getY(), this);
+            playg.drawImage(computer.getHand().get(i).getCardImage(), 
+                  (Driver.X_POSITION_1 + 100*i), 
+                     computer.getHand().get(i).getY() + this.getY(), this);
             
           
          }   
